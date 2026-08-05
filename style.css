@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F7F5F2;
+    color: #111111;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #B8965A;
+    margin-bottom: 12px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    background: rgba(247, 245, 242, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #111111;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #111111;
+}
+
+.nav-cta {
+    color: #F7F5F2;
+    background-color: #111111;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.nav-cta:hover {
+    transform: scale(1.04);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 20px 80px;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1672642150228-3fcd5826ec26?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    filter: grayscale(100%);
+}
+
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(17,17,17,0.75) 0%, rgba(17,17,17,0.55) 50%, rgba(17,17,17,0.92) 100%);
+}
+
+.badge {
+    position: relative;
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    border: 1px solid rgba(184, 150, 90, 0.5);
+    border-radius: 20px;
+    background: rgba(184, 150, 90, 0.15);
+    color: #E4CB9C;
+    margin-bottom: 28px;
+}
+
+.hero h1 {
+    position: relative;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 5.5rem;
+    line-height: 0.98;
+    font-weight: 700;
+    color: #FAFAFA;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+}
+
+.hero .subtitulo {
+    position: relative;
+    font-size: 1.15rem;
+    color: #D6D6D6;
+    max-width: 480px;
+    margin-bottom: 40px;
+}
+
+.cta-btn {
+    background-color: #B8965A;
+    color: #111111;
+    border: none;
+    padding: 16px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Servicios: lista tipo carta */
+.servicios {
+    padding: 120px 48px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.servicios h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 48px;
+    letter-spacing: -0.02em;
+}
+
+.servicio-fila {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.servicio-fila h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    color: #111111;
+    white-space: nowrap;
+}
+
+.linea {
+    flex: 1;
+    border-bottom: 1px dotted rgba(0,0,0,0.25);
+    margin-bottom: 6px;
+}
+
+.precio {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: #B8965A;
+    font-size: 1.1rem;
+}
+
+/* Nosotros */
+.nosotros {
+    padding: 100px 48px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.nosotros h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.nosotros p {
+    color: #555555;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Beneficios: barra oscura */
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #111111;
+}
+
+.beneficio-item {
+    text-align: center;
+    padding: 48px 24px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.beneficio-item:last-child {
+    border-right: none;
+}
+
+.beneficio-item .numero {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #B8965A;
+    margin-bottom: 8px;
+}
+
+.beneficio-item p {
+    color: #AAAAAA;
+    font-size: 0.9rem;
+}
+
+/* CTA Final */
+.cta-final {
+    padding: 140px 48px;
+    text-align: center;
+    background-color: #F7F5F2;
+}
+
+.cta-final h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.2rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.cta-final p {
+    font-size: 1.05rem;
+    color: #555555;
+    margin-bottom: 32px;
+}
+
+/* Footer */
+.footer {
+    padding: 50px 48px 36px;
+    text-align: center;
+    background-color: #111111;
+}
+
+.footer .logo {
+    display: block;
+    color: #FAFAFA;
+    margin-bottom: 16px;
+}
+
+.footer p {
+    color: #777777;
+    font-size: 0.85rem;
+}
+
+.footer-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+}
+
+.footer-links a {
+    color: #AAAAAA;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #B8965A;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+    .beneficio-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .cta-final h2 {
+        font-size: 2.2rem;
+    }
+    .servicio-fila {
+        flex-wrap: wrap;
+    }
+}
