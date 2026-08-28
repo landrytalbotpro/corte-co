@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corte & Co. · Barbería</title>
+    <title>Corte & Co. · Barbería en Gijón</title>
+    <meta name="description" content="Barbería en Gijón. Cortes, barba y afeitado tradicional. Precios claros, sin sorpresas.">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,7 +12,18 @@
 
     <nav class="navbar">
         <span class="logo">CORTE&CO.</span>
-        <a href="https://wa.me/34TUNUMERO?text=Hola%2C%20%C2%BFten%C3%A9is%20hueco%20esta%20semana%3F" class="nav-cta" target="_blank">Reservar</a>
+        <div class="nav-links" id="mainNav">
+            <a href="#servicios">Servicios</a>
+            <a href="#equipo">Equipo</a>
+            <a href="#galeria">Galería</a>
+            <a href="#avis">Opiniones</a>
+        </div>
+        <div class="nav-actions">
+            <a href="https://wa.me/34TUNUMERO?text=Hola%2C%20%C2%BFten%C3%A9is%20hueco%20esta%20semana%3F" class="nav-cta" target="_blank">Reservar</a>
+            <button class="burger-btn" id="burgerBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
 
     <header class="hero">
@@ -26,7 +38,7 @@
         <div class="infobar-item">⭐ 4.9 sobre 300+ reseñas</div>
     </section>
 
-    <section class="services">
+    <section class="services" id="servicios">
         <p class="kicker">Servicios</p>
         <h2>Precios claros, sin sorpresas</h2>
         <div class="services-grid">
@@ -49,7 +61,46 @@
         </div>
     </section>
 
-    <section class="avis">
+    <section class="concept">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&h=875&q=80" alt="Barbero trabajando en Corte & Co. Gijón" loading="lazy">
+        <div>
+            <p class="kicker">Nuestra historia</p>
+            <h2>Un oficio que se aprende con años, no con prisa</h2>
+            <p>Corte & Co. abrió sus puertas en el corazón de Gijón con una idea simple: cada cliente merece el tiempo que su corte necesita, ni un minuto menos.</p>
+            <p>Herramientas cuidadas, técnica clásica y un trato cercano — así trabajamos desde el primer día.</p>
+        </div>
+    </section>
+
+    <section class="equipo" id="equipo">
+        <p class="kicker">Nuestro equipo</p>
+        <h2 style="font-family:'Archivo Black',sans-serif; font-size:2rem;">Dos manos de confianza</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&w=300&h=300&q=80" alt="Diego Alonso, barbero fundador">
+                <h3>Diego Alonso</h3>
+                <span class="role">Fundador</span>
+                <p>18 años de oficio, especialista en cortes clásicos y acabados a navaja.</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&h=300&q=80" alt="Sara Núñez, barbera">
+                <h3>Sara Núñez</h3>
+                <span class="role">Barbera</span>
+                <p>Especialista en degradados y afeitado tradicional con toalla caliente.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="galeria" id="galeria">
+        <p class="kicker">Galería</p>
+        <h2 style="font-family:'Archivo Black',sans-serif; font-size:2rem;">El gesto, en imágenes</h2>
+        <div class="galeria-grid">
+            <img src="https://images.unsplash.com/photo-1634302104565-cc698ee83144?auto=format&fit=crop&w=500&h=500&q=80" alt="Corte en proceso">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=500&h=500&q=80" alt="Interior de la barbería">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=500&h=500&q=80" alt="Detalle de afeitado">
+        </div>
+    </section>
+
+    <section class="avis" id="avis">
         <p class="kicker">Nos avalan</p>
         <div class="avis-grid">
             <div class="avis-card">
@@ -83,6 +134,28 @@
             <a href="mailto:hola@corteandco.com">hola@corteandco.com</a>
         </div>
     </footer>
+
+    <script>
+    (function () {
+        var btn = document.getElementById('burgerBtn');
+        var nav = document.getElementById('mainNav');
+        if (!btn || !nav) return;
+
+        btn.addEventListener('click', function () {
+            var isOpen = nav.classList.toggle('open');
+            btn.classList.toggle('open', isOpen);
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        nav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                nav.classList.remove('open');
+                btn.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    })();
+    </script>
 
 </body>
 </html>

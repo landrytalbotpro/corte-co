@@ -46,6 +46,58 @@ body {
     transform: scale(1.04);
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-links a {
+    color: #F2F0EB;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: #C1272D;
+}
+
+.burger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.burger-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #F2F0EB;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.burger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger-btn.open span:nth-child(2) { opacity: 0; }
+.burger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* Hero plein écran avec photo */
 .hero {
     position: relative;
@@ -290,6 +342,107 @@ body {
     color: #C1272D;
 }
 
+/* Concept */
+.concept {
+    padding: 100px 40px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.concept img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: grayscale(60%) contrast(1.05);
+}
+
+.concept h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.concept p {
+    color: #A8A29B;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 14px;
+}
+
+/* Equipo */
+.equipo {
+    padding: 100px 40px;
+    text-align: center;
+    background-color: #161616;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1000px;
+    margin: 48px auto 0;
+}
+
+.team-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    filter: grayscale(50%);
+}
+
+.team-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.team-card .role {
+    color: #C1272D;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.team-card p {
+    color: #A8A29B;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Galeria */
+.galeria {
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1000px;
+    margin: 48px auto 0;
+}
+
+.galeria-grid img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 6px;
+    filter: grayscale(35%);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .hero-title {
@@ -303,10 +456,45 @@ body {
         border-bottom: 1px solid rgba(13,13,13,0.1);
     }
     .services-grid,
-    .avis-grid {
+    .avis-grid,
+    .team-grid,
+    .galeria-grid {
         grid-template-columns: 1fr;
+    }
+    .concept {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 70px 24px;
     }
     .cta-final h2 {
         font-size: 2.4rem;
+    }
+
+    .burger-btn {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #0D0D0D;
+        border-bottom: 1px solid rgba(242, 240, 235, 0.1);
+        box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 16px 24px;
+        border-top: 1px solid rgba(242, 240, 235, 0.1);
+        opacity: 1;
     }
 }
